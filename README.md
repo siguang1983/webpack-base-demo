@@ -51,7 +51,7 @@
 
 
 
-### 四、创建webpack.config.js、webpack.production.config配置文件
+### 五、创建webpack.config.js、webpack.production.config配置文件
 
 	webpack.config.js 开发环境所用配置文件
 
@@ -207,7 +207,7 @@
 	}
 
 
-### 五、访问入口 
+### 六、访问入口 
 
 	1、npm run start命令 如果服务启动成功，此命令不会构建到build目录中
 
