@@ -15,7 +15,7 @@ let buildPath = path.resolve(basePath, 'build');
 
 /* libs 目录下的库文件 */
 let libsPath = path.resolve(basePath, 'src/libs');
-let jquery = path.resolve(libsPath, 'jquery.min')
+// let jquery = path.resolve(libsPath, 'jquery')
 
 // webpack配置对象
 module.exports = {
@@ -30,7 +30,7 @@ module.exports = {
         * 将其打包到vendor.js文件内，在页面中单独加载
         * 通过plugins中引用插件来处理 new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js?[hash]'),
         */
-        vendor: [jquery]
+        vendor: ['jquery']      // 这里调的是node_module下的，如果使用libs目录可以在配置
     },
 
     // 出口文件
@@ -125,15 +125,15 @@ module.exports = {
     // devServer: {
     //     port: 5000,                 // 端口
     //     contentBase: 'build',       // 内容目录
-    //     hot: true,
-    //     inline: true,               // 热刷新
-    //     proxy: [                 // 设置代理服务器
-    //         {
-    //             path: ["/api","/user"], //
-    //             target: "http://10.20.1.8:3002/", // 转发的服务器地址
-    //             // rewrite: rewriteUrl('/$1\.json'),
-    //             changeOrigin: true
-    //         }
-    //     ]
+    //     hot: true,                  // 热刷新
+    //     inline: true,
+    //     // proxy: [                 // 设置代理服务器
+    //     //     {
+    //     //         path: ["/api","/user"], //
+    //     //         target: "http://10.20.1.8:3002/", // 转发的服务器地址
+    //     //         // rewrite: rewriteUrl('/$1\.json'),
+    //     //         changeOrigin: true
+    //     //     }
+    //     // ]
     // }
 }
