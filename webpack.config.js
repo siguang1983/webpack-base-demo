@@ -7,6 +7,7 @@ let webpack = require('webpack');
 let path = require('path');
 let HtmlWebpackPlugin = require('html-webpack-plugin');
 // let ExtractTextPlugin = require("extract-text-webpack-plugin"); // 单独打包CSS
+let openBrowserWebpackPlugin = require('open-browser-webpack-plugin');
 
 /*  文件路径配置 */
 let basePath = __dirname;
@@ -111,7 +112,10 @@ module.exports = {
         // new ExtractTextPlugin("[name].css?[hash]"),
 
         // 热启动
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+
+        // 自动开启浏览器
+        new openBrowserWebpackPlugin({ url: 'http://localhost:5000' })
     ],
 
     // 查找依赖

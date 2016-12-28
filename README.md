@@ -43,12 +43,22 @@
 
 ### 四、其它插件
 
-	// html-webpack-plugin 插件将入口js文件直接构建到指定的html中，在输出到指定目录，这样不用手动在html引用js文件，通过插件来做
-	$ npm i html-webpack-plugin 
+	1、html-webpack-plugin 插件将入口js文件直接构建到指定的html中，在输出到指定目录，这样不用手动在html引用js文件，通过插件来做
+	
+		$ npm i html-webpack-plugin 
 
-	// extract-text-webpack-plugin 单独打包css文件
-	$ npm i extract-text-webpack-plugin
+	2、extract-text-webpack-plugin 单独打包css文件
+	
+		$ npm i extract-text-webpack-plugin
 
+	3、open-browser-webpack-plugin   自动打开浏览器
+
+		$ npm i open-browser-webpack-plugin
+
+			var openBrowserWebpackPlugin = require('open-browser-webpack-plugin');
+			plugin: [
+			  new openBrowserWebpackPlugin({ url: 'http://localhost:8080' })
+			]
 
 
 ### 五、创建webpack.config.js、webpack.production.config配置文件
@@ -75,6 +85,7 @@
 	let path = require('path');
 	let HtmlWebpackPlugin = require('html-webpack-plugin');
 	// let ExtractTextPlugin = require("extract-text-webpack-plugin"); // 单独打包CSS
+	let openBrowserWebpackPlugin = require('open-browser-webpack-plugin');
 
 	/*  文件路径配置 */
 	let basePath = __dirname;
@@ -180,6 +191,9 @@
 
 	        // 热启动
 	        new webpack.HotModuleReplacementPlugin()
+
+	        // 自动开启浏览器
+        	new openBrowserWebpackPlugin({ url: 'http://localhost:5000' })
 	    ],
 
 	    // 查找依赖
@@ -207,7 +221,7 @@
 	}
 
 
-### 六、访问入口 
+### 四、访问入口 
 
 	1、npm run start命令 如果服务启动成功，此命令不会构建到build目录中
 
