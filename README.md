@@ -27,7 +27,7 @@
 ### 三、安装插件
 
 	// 如果使用react框架来做项目，先下载包
-	$ npm i --save react react-dom
+	$ npm i react react-dom --save-dev
 
 	// 使用Babel-loader来解析es6和jsx
 	$ npm i babel-loader babel-core --save
