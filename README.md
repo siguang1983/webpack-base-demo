@@ -14,7 +14,7 @@
 
 	// 配置.babelrc文件
 	{
-		"presets": ["es2015", "react", "stage-0"],
+		"presets": ["es2015", "react", "stage-0", "stage-1", "stage-2", "stage-3"],
 		"plugins": []
 	}
 
@@ -30,15 +30,15 @@
 	$ npm i --save react react-dom
 
 	// 使用Babel-loader来解析es6和jsx
-	$ npm i babel-loader babel-core
+	$ npm i babel-loader babel-core --save
 
-	$ npm i babel-preset-es2015 babel-preset-react babel-preset-stage-0
+	$ npm i babel-preset-es2015 babel-preset-react babel-preset-stage-0 babel-preset-stage-1 babel-preset-stage-2 babel-preset-stage-3 --save
 
 	// jsx转换
 	$ npm i jsx-loader --save
 
 	// 解析样式文件
-	$ npm install style-loader css-loader less-loader sass-loader	
+	$ npm install style-loader css-loader less-loader sass-loader  --save
 
 
 ### 四、其它插件
@@ -61,7 +61,7 @@
 			]
 
 
-### 五、创建webpack.config.js、webpack.production.config配置文件
+### 五、创建webpack.config.js、webpack.production.config.js配置文件
 
 	webpack.config.js 开发环境所用配置文件
 
@@ -222,6 +222,13 @@
 
 
 ### 四、访问入口 
+
+	package.json
+
+		"scripts": {
+	        "start": "webpack-dev-server --hot --inline",
+	        "build": "webpack --progress --profile --colors --config webpack.production.config.js"
+	    },
 
 	1、npm run start命令 如果服务启动成功，此命令不会构建到build目录中
 
